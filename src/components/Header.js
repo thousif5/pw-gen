@@ -1,9 +1,24 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "../style/main.css";
 
 function Header() {
+  const [top, setTop] = useState(true);
+
+  // detect whether user has scrolled the page down by 10px
+  useEffect(() => {
+    const scrollHandler = () => {
+      window.pageYOffset > 10 ? setTop(false) : setTop(true);
+    };
+    window.addEventListener("scroll", scrollHandler);
+    return () => window.removeEventListener("scroll", scrollHandler);
+  }, [top]);
+
   return (
-    <div className="bg-gray-50 z-30 md:bg-opacity-90 transition duration-300 ease-in-out bg-white blur shadow-lg">
+    <div
+      className={`fixed w-full bg-gray-50 z-30 md:bg-opacity-90 transition duration-300 ease-in-out ${
+        !top && "bg-white blur shadow-lg"
+      }`}
+    >
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="p-4 flex justify-between items-center">
           <div className="logo-images flex">
@@ -29,7 +44,7 @@ function Header() {
             </a>
             <a
               href="#"
-              className="rounded-lg text-gray-200 bg-gray-900 hover:bg-gray-800 ml-3 flex items-center"
+              className="rounded-lg my-4 text-gray-200 bg-gray-900 hover:bg-gray-800 flex items-center"
             >
               <span className="p-2">Sign up</span>
             </a>
