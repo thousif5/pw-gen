@@ -36,12 +36,14 @@ function Header() {
             ></img>
           </div>
           <div className="menu flex px-2">
+            {/* eslint-disable-next-line*/}
             <a
               href="#"
               className="font-medium text-gray-600 hover:text-gray-900 px-5 py-3 flex items-center transition duration-150 ease-in-out"
             >
               Sign in
             </a>
+            {/* eslint-disable-next-line*/}
             <a
               href="#"
               className="rounded-lg my-4 text-gray-200 bg-gray-900 hover:bg-gray-800 flex items-center"

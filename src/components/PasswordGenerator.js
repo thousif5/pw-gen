@@ -4,26 +4,34 @@ function PasswordGenerator() {
   return (
     <div>
       <div className="w-full mt-10 sm:mt-0">
-        <div className="w-full flex">
-          <div className="w-1/2 ml-2 md:col-span-1">
-            <div className="px-4 sm:px-0">
-              <h2 className="text-lg font-medium leading-6 text-gray-900">
-                Good to know:
-              </h2>
-              <p className="mt-1 text-sm text-gray-600">
-                1. Password generator uses cryptographically secure pseudorandom
-                number generator with all modern browsers.
-              </p>
-              <p className="mt-1 text-sm text-gray-600">
-                2. The password is generated locally in the browser and is not
-                sent to the server.
-              </p>
-              <p className="mt-1 text-sm text-gray-600">
-                3. The web page is loaded with HTTPS and SSL encryption.
-              </p>
-            </div>
+        <div className="w-full grid sm:grid-cols-2 gap-8">
+          <div className="w-full ml-2 md:col-span-1">
+            {/* <div className="px-4 sm:px-none"> */}
+            <h2 className="text-xl font-medium leading-6 text-gray-900">
+              Good to know:
+            </h2>
+            <ul className="list-disc">
+              <li>
+                <p className="mt-1 text-sm text-gray-600">
+                  Password generator uses cryptographically secure pseudorandom
+                  number generator with all modern browsers.
+                </p>
+              </li>
+              <li>
+                <p className="mt-1 text-sm text-gray-600">
+                  The password is generated locally in the browser and is not
+                  sent to the server.
+                </p>
+              </li>
+              <li>
+                <p className="mt-1 text-sm text-gray-600">
+                  The web page is loaded with HTTPS and SSL encryption.
+                </p>
+              </li>
+            </ul>
+            {/* </div> */}
           </div>
-          <div className="w-1/2 mt-5 md:mt-0 md:col-span-2">
+          <div className="w-auto mt-5 md:mt-0 md:col-span-1">
             <form action="#">
               <div className="shadow overflow-hidden sm:rounded-md">
                 <div className="px-4 py-5 bg-gray-200 sm:p-6">
